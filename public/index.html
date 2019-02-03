@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1 id="message">Press spacebar to connect</h1>
-<canvas id="canvas" width="400" height="400" style="border: 1px solid black; display: none"></canvas>
+<canvas id="canvas" width="900" height="900" style="border: 1px solid black; display: none"></canvas>
 <script type="text/javascript">
 	myPlayer = new player();
 	playerSpeed = 5;
@@ -64,7 +64,7 @@
 		if(e.keyCode==40) myPlayer.move('down');
 		if(e.keyCode==37) myPlayer.move('left');
 		if(e.keyCode==39) myPlayer.move('right');
-		if(e.keyCode==32) $('#message').hide(); $('#canvas').show();
+		if(e.keyCode==32) {$('#message').hide(); $('#canvas').show();}
 
 		socket.emit('clientSendingPosition', myPlayer);
 
